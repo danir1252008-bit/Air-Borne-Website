@@ -850,42 +850,69 @@ html, body {
   }
 
   .hero-logo-img {
-    max-width: 220px !important;
-    margin-bottom: -3rem !important;
+    max-width: 210px !important;
+    margin-bottom: 0rem !important;
+    margin-top: 0rem !important;
+  }
+
+  .hero-brand-card.glass-docked .hero-logo-img {
+    max-width: 140px !important;
+    margin-bottom: -0.5rem !important;
+    margin-top: 0rem !important;
+  }
+
+  .hero-subheadline {
+    font-size: 1.15rem !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .hero-brand-card.glass-docked .hero-subheadline {
+    font-size: 1rem !important;
+    margin-top: 0.1rem !important;
   }
 
   .hero-brand-card {
     padding: 1rem 1.25rem !important;
-    width: 92vw !important;
+    width: auto !important;
+    max-width: 92vw !important;
+    gap: 0.25rem !important;
   }
 
   .hero-brand-card.glass-docked {
-    padding: 0.85rem 1.5rem !important;
-  }
-
-  .hero-subheadline {
-    font-size: 1.2rem !important;
+    padding: 0.75rem 1.25rem !important;
   }
 
   .hero-story-card {
     padding: 1rem 1.25rem !important;
-    width: 92vw !important;
+    width: auto !important;
+    max-width: 92vw !important;
   }
 
   .hero-story-text {
-    font-size: 0.95rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero-logo-img {
-    max-width: 180px !important;
-    margin-bottom: -2.5rem !important;
+    max-width: 170px !important;
+    margin-bottom: 0rem !important;
   }
 
   .hero-brand-card.glass-docked .hero-logo-img {
-    max-width: 140px !important;
-    margin-bottom: -1.5rem !important;
+    max-width: 120px !important;
+    margin-bottom: -0.25rem !important;
+  }
+
+  .hero-subheadline {
+    font-size: 1.05rem !important;
+  }
+
+  .hero-brand-card.glass-docked .hero-subheadline {
+    font-size: 0.9rem !important;
   }
 
   .loader-brand {
