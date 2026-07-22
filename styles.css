@@ -169,6 +169,7 @@ html, body {
   transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, backdrop-filter 0.35s ease;
   pointer-events: auto;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .hero-brand-card.glass-docked {
@@ -182,13 +183,14 @@ html, body {
 
 .hero-logo-img {
   max-width: 320px;
-  width: 75vw;
+  width: 100%;
   height: auto;
   object-fit: contain;
-  margin-bottom: -4.5rem;
+  margin: 0 auto -4.5rem auto;
   filter: brightness(1.45) contrast(1.15) drop-shadow(0 0 30px rgba(255, 230, 180, 0.65)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.5)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7));
   animation: heroLogoFloat 4s ease-in-out infinite alternate;
-  transition: max-width 0.35s ease, margin-bottom 0.35s ease, margin-top 0.35s ease;
+  transition: max-width 0.35s ease, margin 0.35s ease;
+  display: block;
 }
 
 .hero-subheadline {
@@ -199,21 +201,21 @@ html, body {
   color: #fff9ee;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 25px rgba(235, 180, 90, 0.4);
   line-height: 1;
-  margin-top: -1rem;
-  transition: font-size 0.35s ease, margin-top 0.35s ease, margin-bottom 0.35s ease;
+  margin: -1rem auto 0 auto;
+  text-align: center;
+  width: 100%;
+  transition: font-size 0.35s ease, margin 0.35s ease;
 }
 
 .hero-brand-card.glass-docked .hero-logo-img {
   max-width: 200px;
-  margin-top: -1.75rem;
-  margin-bottom: -2.5rem;
+  margin: -1.75rem auto -2.5rem auto;
 }
 
 .hero-brand-card.glass-docked .hero-subheadline {
   font-size: 1.3rem;
   letter-spacing: 0.03em;
-  margin-top: 0;
-  margin-bottom: 0.1rem;
+  margin: 0 auto 0.1rem auto;
 }
 
 /* Hero Right Story Card */
