@@ -25,49 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animation State
   let currentFrame = 0;
   let targetFrame = 0;
-  let lastRenderedFrame = -1;
   let isAutoPlaying = false;
   let autoPlayRafId = null;
 
-  // Cached Layout Metrics to prevent layout thrashing
-  let cachedViewportWidth = window.innerWidth;
-  let cachedViewportHeight = window.innerHeight;
-  let cachedContainerTop = 0;
-  let cachedContainerHeight = 1;
-  let cachedLeftHeight = 220;
-  let cachedRightHeight = 130;
-  let cachedRightWidth = 380;
-
-  function updateMetrics() {
-    cachedViewportWidth = window.innerWidth;
-    cachedViewportHeight = window.innerHeight;
-
-    const scrollContainer = document.querySelector('.scroll-container');
-    if (scrollContainer) {
-      cachedContainerTop = scrollContainer.offsetTop;
-      cachedContainerHeight = Math.max(1, scrollContainer.offsetHeight - cachedViewportHeight);
-    }
-
-    const leftCard = document.getElementById('hero-left-card');
-    const rightCard = document.getElementById('hero-right-card');
-    if (leftCard) cachedLeftHeight = leftCard.offsetHeight || 220;
-    if (rightCard) {
-      cachedRightHeight = rightCard.offsetHeight || 130;
-      cachedRightWidth = rightCard.offsetWidth || 380;
-    }
-  }
-
   // Setup Canvas Size & Resize Handler
   function resizeCanvas() {
-    updateMetrics();
-    const isMobile = cachedViewportWidth < 768;
-    const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
-
-    canvas.width = Math.floor(cachedViewportWidth * dpr);
-    canvas.height = Math.floor(cachedViewportHeight * dpr);
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
     ctx.scale(dpr, dpr);
-    
-    lastRenderedFrame = -1;
     renderCanvas(Math.round(currentFrame));
   }
 
@@ -78,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = images[index];
     if (!img || !img.complete || img.naturalWidth === 0) return;
 
-    const viewportWidth = cachedViewportWidth;
-    const viewportHeight = cachedViewportHeight;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
     const imgWidth = img.naturalWidth;
     const imgHeight = img.naturalHeight;
@@ -128,46 +94,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Start Canvas & Animation Loop Immediately
-  updateMetrics();
   resizeCanvas();
   requestAnimationFrame(animationLoop);
 
-  // Calculate target frame index from scroll position
+  // Calculate target frame index from scroll position within the scroll container
   function updateScrollTarget() {
-    if (cachedContainerHeight <= 0) return;
-    const scrollTop = window.scrollY - cachedContainerTop;
-    const scrollFraction = Math.max(0, Math.min(1, scrollTop / cachedContainerHeight));
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (!scrollContainer) return;
+
+    const containerTop = scrollContainer.offsetTop;
+    const containerHeight = scrollContainer.offsetHeight - window.innerHeight;
+    if (containerHeight <= 0) return;
+
+    const scrollTop = window.scrollY - containerTop;
+    const scrollFraction = Math.max(0, Math.min(1, scrollTop / containerHeight));
     targetFrame = scrollFraction * (TOTAL_FRAMES - 1);
   }
 
   window.addEventListener('scroll', updateScrollTarget, { passive: true });
 
-  // Update Dual Hero Overlay Cards
+  // Update Dual Hero Overlay Cards (Left: Logo/Headline -> Bottom Left, Right: Story -> Bottom Right)
   function updateHeroOverlay() {
     const leftCard = document.getElementById('hero-left-card');
     const rightCard = document.getElementById('hero-right-card');
-    if (!leftCard || !rightCard || cachedContainerHeight <= 0) return;
+    if (!leftCard || !rightCard) return;
 
-    const scrollTop = window.scrollY - cachedContainerTop;
-    const scrollFraction = Math.max(0, Math.min(1, scrollTop / cachedContainerHeight));
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (!scrollContainer) return;
+
+    const containerTop = scrollContainer.offsetTop;
+    const containerHeight = scrollContainer.offsetHeight - window.innerHeight;
+    if (containerHeight <= 0) return;
+
+    const scrollTop = window.scrollY - containerTop;
+    const scrollFraction = Math.max(0, Math.min(1, scrollTop / containerHeight));
 
     const DOCK_THRESHOLD = 0.28;
     const progress = Math.min(1, Math.max(0, scrollFraction / DOCK_THRESHOLD));
     const easeProgress = 1 - Math.pow(1 - progress, 3);
 
-    const isMobile = cachedViewportWidth < 768;
-    const GAP = isMobile ? 16 : 40;
+    const isMobile = window.innerWidth < 768;
+    const GAP = isMobile ? 20 : 40;
 
-    const centerX = cachedViewportWidth / 2;
-    const centerY = cachedViewportHeight / 2;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
-    // --- LEFT CARD ---
-    const leftCardHeight = cachedLeftHeight;
+    // --- LEFT CARD (Logo + "Let's Go High") ---
+    const leftCardHeight = leftCard.offsetHeight || 220;
     const leftStartX = centerX;
-    const leftStartY = isMobile ? (centerY - 120) : (centerY - 110);
+    const leftStartY = isMobile ? (centerY - 130) : (centerY - 110);
 
     const leftEndX = GAP;
-    const leftEndY = cachedViewportHeight - leftCardHeight - GAP;
+    const leftEndY = window.innerHeight - leftCardHeight - GAP;
 
     const leftCurrentX = leftStartX + (leftEndX - leftStartX) * easeProgress;
     const leftCurrentY = leftStartY + (leftEndY - leftStartY) * easeProgress;
@@ -177,17 +155,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     leftCard.style.left = `${leftCurrentX.toFixed(1)}px`;
     leftCard.style.top = `${leftCurrentY.toFixed(1)}px`;
-    leftCard.style.transform = `translate(${leftTranslateX.toFixed(1)}%, ${leftTranslateY.toFixed(1)}%) translateZ(0)`;
+    leftCard.style.transform = `translate(${leftTranslateX.toFixed(1)}%, ${leftTranslateY.toFixed(1)}%)`;
 
-    // --- RIGHT CARD ---
-    const rightCardHeight = cachedRightHeight;
-    const rightCardWidth = cachedRightWidth;
+    // --- RIGHT CARD (Description Story Text) ---
+    const rightCardHeight = rightCard.offsetHeight || 130;
+    const rightCardWidth = rightCard.offsetWidth || 380;
 
     const rightStartX = centerX;
-    const rightStartY = isMobile ? (centerY + leftCardHeight / 2 + 30) : (centerY + leftCardHeight / 2 + 25);
+    const rightStartY = isMobile ? (centerY + leftCardHeight / 2 + 35) : (centerY + leftCardHeight / 2 + 25);
 
-    const rightEndX = cachedViewportWidth - rightCardWidth - GAP;
-    const rightEndY = cachedViewportHeight - rightCardHeight - GAP;
+    const rightEndX = window.innerWidth - rightCardWidth - GAP;
+    const rightEndY = window.innerHeight - rightCardHeight - GAP;
 
     const rightCurrentX = rightStartX + (rightEndX - rightStartX) * easeProgress;
     const rightCurrentY = rightStartY + (rightEndY - rightStartY) * easeProgress;
@@ -197,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     rightCard.style.left = `${rightCurrentX.toFixed(1)}px`;
     rightCard.style.top = `${rightCurrentY.toFixed(1)}px`;
-    rightCard.style.transform = `translate(${rightTranslateX.toFixed(1)}%, ${rightTranslateY.toFixed(1)}%) translateZ(0)`;
+    rightCard.style.transform = `translate(${rightTranslateX.toFixed(1)}%, ${rightTranslateY.toFixed(1)}%)`;
 
     // Toggle frosted glass effect cards
     if (progress > 0.12) {
@@ -217,27 +195,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateHeroOverlay();
 
-    // Lerp smooth movement towards target frame (balanced responsive lerp)
-    const isMobile = cachedViewportWidth < 768;
-    const lerpSpeed = isMobile ? 0.35 : 0.25;
-    const delta = (targetFrame - currentFrame) * lerpSpeed;
+    // Lerp smooth movement towards target frame (balanced smooth speed)
+    const delta = (targetFrame - currentFrame) * 0.25;
     currentFrame += delta;
 
     const roundedFrame = Math.round(currentFrame);
     const clampedFrame = Math.max(0, Math.min(TOTAL_FRAMES - 1, roundedFrame));
 
-    // Only redraw canvas when frame actually changes
-    if (clampedFrame !== lastRenderedFrame) {
-      renderCanvas(clampedFrame);
-      lastRenderedFrame = clampedFrame;
+    renderCanvas(clampedFrame);
 
-      // Update HUD
-      const hudFrameStr = String(clampedFrame + 1).padStart(3, '0');
-      if (hudFrameNum) hudFrameNum.innerText = hudFrameStr;
+    // Update HUD
+    const hudFrameStr = String(clampedFrame + 1).padStart(3, '0');
+    if (hudFrameNum) hudFrameNum.innerText = hudFrameStr;
 
-      const progressPercent = (clampedFrame / (TOTAL_FRAMES - 1)) * 100;
-      if (hudProgressFill) hudProgressFill.style.width = `${progressPercent}%`;
-    }
+    const progressPercent = (clampedFrame / (TOTAL_FRAMES - 1)) * 100;
+    if (hudProgressFill) hudProgressFill.style.width = `${progressPercent}%`;
 
     requestAnimationFrame(animationLoop);
   }

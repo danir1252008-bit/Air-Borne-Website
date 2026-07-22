@@ -169,7 +169,6 @@ html, body {
   transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, backdrop-filter 0.35s ease;
   pointer-events: auto;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
 .hero-brand-card.glass-docked {
@@ -183,14 +182,13 @@ html, body {
 
 .hero-logo-img {
   max-width: 320px;
-  width: 100%;
+  width: 75vw;
   height: auto;
   object-fit: contain;
-  margin: 0 auto -4.5rem auto;
+  margin-bottom: -4.5rem;
   filter: brightness(1.45) contrast(1.15) drop-shadow(0 0 30px rgba(255, 230, 180, 0.65)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.5)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7));
   animation: heroLogoFloat 4s ease-in-out infinite alternate;
-  transition: max-width 0.35s ease, margin 0.35s ease;
-  display: block;
+  transition: max-width 0.35s ease, margin-bottom 0.35s ease, margin-top 0.35s ease;
 }
 
 .hero-subheadline {
@@ -201,21 +199,21 @@ html, body {
   color: #fff9ee;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 25px rgba(235, 180, 90, 0.4);
   line-height: 1;
-  margin: -1rem auto 0 auto;
-  text-align: center;
-  width: 100%;
-  transition: font-size 0.35s ease, margin 0.35s ease;
+  margin-top: -1rem;
+  transition: font-size 0.35s ease, margin-top 0.35s ease, margin-bottom 0.35s ease;
 }
 
 .hero-brand-card.glass-docked .hero-logo-img {
   max-width: 200px;
-  margin: -1.75rem auto -2.5rem auto;
+  margin-top: -1.75rem;
+  margin-bottom: -2.5rem;
 }
 
 .hero-brand-card.glass-docked .hero-subheadline {
   font-size: 1.3rem;
   letter-spacing: 0.03em;
-  margin: 0 auto 0.1rem auto;
+  margin-top: 0;
+  margin-bottom: 0.1rem;
 }
 
 /* Hero Right Story Card */
@@ -230,18 +228,6 @@ html, body {
   justify-content: center;
   text-align: center;
   padding: 1.25rem 2rem;
-  border-radius: 24px;
-  background: rgba(15, 19, 29, 0);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease, backdrop-filter 0.35s ease, max-width 0.35s ease;
-  pointer-events: auto;
-  box-sizing: border-box;
-  max-width: 840px;
-  width: 90vw;
-}
   border-radius: 24px;
   background: rgba(15, 19, 29, 0);
   backdrop-filter: blur(0px);
@@ -851,83 +837,5 @@ html, body {
   }
   .hud-progress-track {
     width: 80px;
-  }
-}
-
-/* Responsive Mobile Enhancements */
-@media (max-width: 768px) {
-  header.fixed {
-    width: 95% !important;
-    top: 0.5rem !important;
-  }
-
-  .hero-logo-img {
-    max-width: 210px !important;
-    margin-bottom: 0rem !important;
-    margin-top: 0rem !important;
-  }
-
-  .hero-brand-card.glass-docked .hero-logo-img {
-    max-width: 140px !important;
-    margin-bottom: -0.5rem !important;
-    margin-top: 0rem !important;
-  }
-
-  .hero-subheadline {
-    font-size: 1.15rem !important;
-    margin-top: 0.25rem !important;
-    margin-bottom: 0rem !important;
-    letter-spacing: 0.05em !important;
-  }
-
-  .hero-brand-card.glass-docked .hero-subheadline {
-    font-size: 1rem !important;
-    margin-top: 0.1rem !important;
-  }
-
-  .hero-brand-card {
-    padding: 1rem 1.25rem !important;
-    width: auto !important;
-    max-width: 92vw !important;
-    gap: 0.25rem !important;
-  }
-
-  .hero-brand-card.glass-docked {
-    padding: 0.75rem 1.25rem !important;
-  }
-
-  .hero-story-card {
-    padding: 1rem 1.25rem !important;
-    width: auto !important;
-    max-width: 92vw !important;
-  }
-
-  .hero-story-text {
-    font-size: 0.92rem !important;
-    line-height: 1.5 !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-logo-img {
-    max-width: 170px !important;
-    margin-bottom: 0rem !important;
-  }
-
-  .hero-brand-card.glass-docked .hero-logo-img {
-    max-width: 120px !important;
-    margin-bottom: -0.25rem !important;
-  }
-
-  .hero-subheadline {
-    font-size: 1.05rem !important;
-  }
-
-  .hero-brand-card.glass-docked .hero-subheadline {
-    font-size: 0.9rem !important;
-  }
-
-  .loader-brand {
-    font-size: 1.5rem !important;
   }
 }
