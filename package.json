@@ -1,0 +1,12 @@
+{
+  "name": "air-borne-website",
+  "version": "1.0.0",
+  "description": "Air Airborne Agency Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

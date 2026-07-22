@@ -1,0 +1,487 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Airborne | Services &amp; Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e9e2d4",
+                        "on-primary-fixed": "#281800",
+                        "tertiary-container": "#97908c",
+                        "on-tertiary-fixed": "#1e1b18",
+                        "on-primary": "#ffffff",
+                        "surface": "#fff9ee",
+                        "primary": "#7a581f",
+                        "on-secondary-fixed-variant": "#474743",
+                        "surface-bright": "#fff9ee",
+                        "on-tertiary-container": "#2e2a27",
+                        "tertiary": "#635d5a",
+                        "tertiary-fixed-dim": "#cdc5c0",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#5f4108",
+                        "inverse-on-surface": "#f7f0e2",
+                        "secondary": "#5f5e5a",
+                        "outline-variant": "#d2c4b4",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1e1b13",
+                        "surface-container-high": "#efe7d9",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "secondary-fixed": "#e5e2dc",
+                        "surface-tint": "#7a581f",
+                        "primary-fixed": "#ffddaf",
+                        "on-primary-container": "#3c2600",
+                        "inverse-surface": "#333027",
+                        "surface-container-low": "#faf3e4",
+                        "inverse-primary": "#ecbf7c",
+                        "secondary-container": "#e5e2dc",
+                        "on-surface": "#1e1b13",
+                        "surface-container-highest": "#e9e2d4",
+                        "surface-container": "#f4eddf",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ecbf7c",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#4b4642",
+                        "background": "#fff9ee",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e9e1dc",
+                        "surface-dim": "#e0d9cb",
+                        "outline": "#807568",
+                        "primary-container": "#b38b4d",
+                        "on-secondary-container": "#656460",
+                        "on-secondary-fixed": "#1c1c18",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#4f4539"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit-sm": "8px",
+                        "gutter": "24px",
+                        "unit-xxl": "128px",
+                        "margin-desktop": "64px",
+                        "unit-md": "16px",
+                        "unit-xs": "4px",
+                        "unit-xl": "64px",
+                        "unit-lg": "32px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .soft-elevation {
+            box-shadow: 0 10px 30px -10px rgba(122, 88, 31, 0.1);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #d2c4b4;
+            border-radius: 9999px;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: block;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            background: #7a581f;
+            border: 3px solid #fff9ee;
+            box-shadow: 0 2px 8px rgba(122, 88, 31, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(122, 88, 31, 0.6);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            background: #7a581f;
+            border: 3px solid #fff9ee;
+            box-shadow: 0 2px 8px rgba(122, 88, 31, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+  <!-- Floating Top Navigation Shell (Slim Frosted Glass Pill Navbar) -->
+  <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-[1080px] z-50 transition-all duration-300">
+    <div class="bg-surface/40 backdrop-blur-xl border border-outline-variant/30 rounded-full px-5 md:px-7 py-1.5 shadow-xl shadow-black/10 flex justify-between items-center w-full">
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center text-on-surface hover:opacity-90 transition-opacity">
+        <div class="h-10 md:h-12 w-auto flex items-center">
+          <img alt="AIRBORNE Logo" class="h-full w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ixG5oX7El3rDYQZVjen7l3N43oHFfXBqXXD2TggYw85YH77qS6oFm4pPCx7eHg9zdjPSSuqJ13WbXZeQBTNboAql-OfW9DR5g98yQTyHXXzvGkySPuR9EWnxXMr5v8GjIidKGQIODYOf97MO9hfIAplDGHwAK4ls4ZYYDViiC82xs2SARpRjPqX3-SnKKuQAS0TwgW_EDbK9AOyB-QmYtJUa6EdpONpc_qYc-tMHJy0aDBwP5yF0sawH_wJzaVPI5rlLWsqVAFQ">
+        </div>
+      </a>
+
+      <!-- Desktop Menu Links -->
+      <div class="hidden md:flex items-center space-x-7">
+        <a class="nav-menu-link font-label-md text-label-md text-on-surface-variant pb-0.5 hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+        <a class="nav-menu-link font-label-md text-label-md text-on-surface-variant pb-0.5 hover:text-primary transition-colors duration-300" href="portfolio.html">Portfolio</a>
+        <a class="nav-menu-link font-label-md text-label-md text-primary border-b-2 border-primary pb-0.5 transition-colors duration-300" href="pricing.html">Pricing</a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center">
+        <a href="https://wa.me/919310040848?text=Hi%20Air%20Borne%20i%20want%20to%20book%20a%20call." target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-5 py-1.5 rounded-full font-label-md text-label-sm hover:opacity-90 transition-all duration-300 shadow-sm flex items-center gap-1.5">
+          Work With Us
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-on-surface p-1 focus:outline-none" aria-label="Toggle Navigation Menu">
+        <span class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl border border-outline-variant/40 rounded-2xl mt-2 px-6 py-4 space-y-3 shadow-2xl">
+      <a class="nav-menu-link block font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" href="index.html">Home</a>
+      <a class="nav-menu-link block font-label-md text-label-md text-on-surface-variant hover:text-primary py-1" href="portfolio.html">Portfolio</a>
+      <a class="nav-menu-link block font-label-md text-label-md text-primary font-bold py-1" href="pricing.html">Pricing</a>
+      <a href="https://wa.me/919310040848?text=Hi%20Air%20Borne%20i%20want%20to%20book%20a%20call." target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-on-primary px-5 py-1.5 rounded-full font-label-md text-label-sm mt-2">
+        Work With Us
+      </a>
+    </div>
+  </header>
+  <main class="pt-24">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop pt-unit-xxl pb-unit-xl text-center">
+<div class="inline-block px-unit-md py-unit-xs bg-surface-container-high rounded-full text-primary font-label-md mb-unit-lg">
+                SERVICES &amp; PRICING
+            </div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-unit-md">
+                Crafting Digital Excellence,<br><span class="text-primary italic">Tailored for You</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Discover our curated service packages designed to elevate your brand. Transparent pricing, uncompromising quality.
+            </p>
+</section>
+<!-- Pricing Cards -->
+<section class="max-w-container-max mx-auto px-margin-desktop pb-unit-xxl">
+<div id="pricing-packages-grid" class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
+<!-- Package 1 -->
+<div class="bg-surface-container-low p-unit-xl rounded-xl soft-elevation flex flex-col border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm mb-unit-sm">Brand Identity</h3>
+<p class="text-on-surface-variant font-body-md mb-unit-lg">A foundational visual identity that speaks volumes, designed for tech-forward start-ups.</p>
+<div class="text-display-lg text-headline-md mb-unit-xl text-primary font-bold">From ₹1,20,000</div>
+<ul class="space-y-unit-md flex-grow">
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Strategic Brand Discovery
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Core Logo System &amp; Marks
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Curation of Color &amp; Typography
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Brand Guidelines (40+ pages)
+                        </li>
+</ul>
+</div>
+<!-- Package 2 (Highlighted) -->
+<div class="bg-surface-container p-unit-xl rounded-xl soft-elevation flex flex-col border-2 border-primary relative transform scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-unit-lg py-unit-xs rounded-full text-label-sm">
+                        MOST POPULAR
+                    </div>
+<h3 class="font-headline-sm text-headline-sm mb-unit-sm">Web Experience</h3>
+<p class="text-on-surface-variant font-body-md mb-unit-lg">Bespoke digital homes that balance aesthetic storytelling with high-conversion functional design.</p>
+<div class="text-display-lg text-headline-md mb-unit-xl text-primary font-bold">From ₹2,50,000</div>
+<ul class="space-y-unit-md flex-grow">
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Custom Layout Design (5-7 Pages)
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            CMS Integration &amp; Training
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Responsive Optimization
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            SEO &amp; Performance Audit
+                        </li>
+</ul>
+</div>
+<!-- Package 3 -->
+<div class="bg-surface-container-low p-unit-xl rounded-xl soft-elevation flex flex-col border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm mb-unit-sm">Growth &amp; Social</h3>
+<p class="text-on-surface-variant font-body-md mb-unit-lg">Continuous creative direction and audience growth for brands that refuse to settle for the noise.</p>
+<div class="text-display-lg text-headline-md mb-unit-xl text-primary font-bold">₹95,000/mo</div>
+<ul class="space-y-unit-md flex-grow">
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            12 Monthly Creative Assets
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Content Strategy &amp; Planning
+                        </li>
+<li class="flex items-center gap-unit-sm text-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                            Engagement &amp; Lead Monitoring
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Project Estimator Widget -->
+<section class="bg-surface-container-low py-unit-xxl">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-unit-xl bg-surface p-unit-xl rounded-xl border border-outline-variant/20 soft-elevation">
+<!-- Controls -->
+<div class="flex-grow space-y-unit-xl">
+<div>
+<h2 class="font-headline-md text-headline-md mb-unit-sm">Project Estimator</h2>
+<p class="text-on-surface-variant">Get a rough idea of your investment instantly. Select your core service and requirements.</p>
+</div>
+<div class="space-y-unit-lg">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Core Service</p>
+<div class="flex flex-wrap gap-unit-sm">
+<button data-service="branding" class="service-toggle px-unit-lg py-unit-sm rounded-lg border border-outline-variant bg-surface-container-low text-on-surface-variant font-label-md transition-all cursor-pointer" onclick="updateEstimate('branding')">Branding</button>
+<button data-service="web" class="service-toggle px-unit-lg py-unit-sm rounded-lg border border-[#7a5725] bg-[#7a5725] text-white font-label-md transition-all shadow-md cursor-pointer font-bold" onclick="updateEstimate('web')">Web Design</button>
+<button data-service="growth" class="service-toggle px-unit-lg py-unit-sm rounded-lg border border-outline-variant bg-surface-container-low text-on-surface-variant font-label-md transition-all cursor-pointer" onclick="updateEstimate('growth')">Growth Marketing</button>
+</div>
+</div>
+<div class="space-y-unit-md">
+<div class="flex justify-between items-center">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Complexity</p>
+<span class="text-primary font-bold text-label-md" id="complexity-label">Standard</span>
+</div>
+<div class="relative w-full py-1">
+<input id="complexity-slider" class="w-full m-0 p-0 block box-border" max="3" min="1" oninput="updateEstimate()" step="1" type="range" value="2">
+<div class="grid grid-cols-3 text-label-sm font-label-md text-on-surface-variant mt-3">
+<span class="cursor-pointer hover:text-primary transition-colors text-left" onclick="document.getElementById('complexity-slider').value=1; updateEstimate();">MVP</span>
+<span class="cursor-pointer hover:text-primary transition-colors text-center font-semibold" onclick="document.getElementById('complexity-slider').value=2; updateEstimate();">Standard</span>
+<span class="cursor-pointer hover:text-primary transition-colors text-right" onclick="document.getElementById('complexity-slider').value=3; updateEstimate();">Enterprise</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Card -->
+<div class="lg:w-96 bg-surface-container-high p-unit-xl rounded-xl flex flex-col justify-center text-center">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-unit-sm">ESTIMATED RANGE</p>
+<div class="text-display-lg text-headline-md text-primary mb-unit-lg" id="price-range">₹45k - ₹63k</div>
+<p class="text-label-sm text-on-surface-variant mb-unit-xl">*Detailed quote required for final confirmation</p>
+<a href="https://wa.me/919310040848?text=Hi%20Air%20Borne%20i%20want%20to%20know%20about" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-on-primary py-unit-md rounded-lg font-label-md hover:opacity-90 transition-all">
+    Send Detailed Quote
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Proof Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-unit-xxl">
+<div class="flex flex-col lg:flex-row items-center gap-unit-xxl">
+<div class="lg:w-1/2 space-y-unit-lg">
+<h2 class="font-display-lg text-headline-md">See Our Craft in Action</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        We don't just build interfaces; we engineer digital ecosystems that drive tangible revenue. Explore our portfolio to see the depth of our strategic thinking.
+                    </p>
+<a class="inline-flex items-center gap-unit-sm text-primary font-bold border-b border-primary pb-1" href="#">
+                        Explore Portfolio <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="lg:w-1/2 relative group">
+<div class="aspect-video bg-surface-container-highest rounded-xl overflow-hidden relative soft-elevation">
+<img class="w-full h-full object-cover" data-alt="A high-end, clean studio shot of a designer's desk with a sleek laptop showing a modern, minimalist website design. Soft warm morning sunlight streams in, highlighting parchment textures and elegant brass desktop accessories. The overall aesthetic is professional, airy, and grounded in a sun-baked palette of warm neutrals and soft gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqvwXEcB1AjL0TEZpAq5RF1KHq_R20nNX_5yIjdqLQ0Adm65lJFlrg9EZTKWSwaz8CAS8ZzZKFd5TIDvpPpgbOyQaMe738Cqe2YVDlhtlctF6JYS6uRCzV22c33Y8ZCtZhLtU28oXkDpxhjN-21Cnkv37FmuMzLe4yAqD17wBduTTPvhJyksWj60DAYxv9xMN4FZerYKtVO14AAACv6VK-NJ8k2Div9LrEnU5LfLYuRIxuYDJxFm4DvRom2Op9PmCVYTDkHCjf9Is">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+<div class="bg-surface p-unit-lg rounded-full flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">play_circle</span>
+<span class="font-label-md">Live Preview</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-start w-full px-margin-desktop py-unit-xl max-w-container-max mx-auto gap-unit-xl">
+<div class="space-y-unit-md">
+<div class="h-8"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ixG5oX7El3rDYQZVjen7l3N43oHFfXBqXXD2TggYw85YH77qS6oFm4pPCx7eHg9zdjPSSuqJ13WbXZeQBTNboAql-OfW9DR5g98yQTyHXXzvGkySPuR9EWnxXMr5v8GjIidKGQIODYOf97MO9hfIAplDGHwAK4ls4ZYYDViiC82xs2SARpRjPqX3-SnKKuQAS0TwgW_EDbK9AOyB-QmYtJUa6EdpONpc_qYc-tMHJy0aDBwP5yF0sawH_wJzaVPI5rlLWsqVAFQ" alt="Airborne Logo" class="h-full w-auto object-contain"></div>
+<p class="max-w-xs text-on-surface-variant font-body-md">Crafting digital experiences rooted in sun-baked simplicity and editorial excellence.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-unit-xl w-full md:w-auto">
+<div class="space-y-unit-md">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">Legal</h4>
+<nav class="flex flex-col gap-unit-sm">
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a>
+</nav>
+</div>
+<div class="space-y-unit-md">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">Explore</h4>
+<nav class="flex flex-col gap-unit-sm">
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all" href="#">Case Studies</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-unit-md text-center md:text-left border-t border-outline-variant/20">
+<p class="text-on-surface-variant text-label-sm">© 2024 Airborne Agency. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function updateEstimate(serviceType = null) {
+            const pricingData = {
+                branding: { base: 120000, multi: 1.2 },
+                web: { base: 250000, multi: 1.5 },
+                growth: { base: 95000, multi: 1.1 }
+            };
+
+            const complexityLabels = ["MVP", "Standard", "Enterprise"];
+            const slider = document.getElementById('complexity-slider');
+            const complexityLabel = document.getElementById('complexity-label');
+            const priceRange = document.getElementById('price-range');
+
+            if (!slider || !complexityLabel || !priceRange) return;
+            
+            if (serviceType) {
+                window.currentService = serviceType;
+            }
+            const current = window.currentService || 'web';
+            
+            // Handle service button toggle visually (Dark background for active selection)
+            const buttons = document.querySelectorAll('.service-toggle');
+            buttons.forEach(btn => {
+                if (btn.dataset.service === current) {
+                    btn.className = "service-toggle px-unit-lg py-unit-sm rounded-lg border border-[#7a5725] bg-[#7a5725] text-white font-label-md transition-all duration-300 shadow-md cursor-pointer font-bold";
+                } else {
+                    btn.className = "service-toggle px-unit-lg py-unit-sm rounded-lg border border-outline-variant bg-surface-container-low text-on-surface-variant hover:border-primary hover:text-primary font-label-md transition-all duration-300 cursor-pointer font-normal";
+                }
+            });
+            const complexity = parseInt(slider.value);
+            complexityLabel.innerText = complexityLabels[complexity-1];
+
+            let baseVal = pricingData[current].base;
+            let multiplier = (complexity === 1) ? 0.7 : (complexity === 3) ? 2.2 : 1;
+            
+            let finalLow = Math.round((baseVal * multiplier) / 5000) * 5000;
+            let finalHigh = Math.round((finalLow * 1.4) / 5000) * 5000;
+
+            const formatter = new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            });
+
+            priceRange.innerText = `${formatter.format(finalLow)} - ${formatter.format(finalHigh)}`;
+        };
+
+        // Initialize state
+        window.currentService = 'web';
+
+        // Dynamic Packages Sync from Admin Dashboard localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('pricing-packages-grid');
+            if (!container) return;
+
+            const saved = localStorage.getItem('airborne_service_packages');
+            if (!saved) return;
+
+            try {
+                const packages = JSON.parse(saved);
+                if (!Array.isArray(packages) || packages.length === 0) return;
+
+                container.innerHTML = packages.map((pkg, idx) => {
+                    const isPopular = (pkg.badge && pkg.badge.toLowerCase().includes('popular')) || idx === 1;
+                    return `
+                        <div class="${isPopular ? 'bg-surface-container p-unit-xl rounded-xl soft-elevation flex flex-col border-2 border-primary relative transform md:scale-105 z-10' : 'bg-surface-container-low p-unit-xl rounded-xl soft-elevation flex flex-col border border-outline-variant/30'}">
+                            ${pkg.badge ? `
+                                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-unit-lg py-unit-xs rounded-full text-label-sm uppercase font-bold tracking-wider shadow-md">
+                                    ${pkg.badge}
+                                </div>
+                            ` : ''}
+                            <h3 class="font-headline-sm text-headline-sm mb-unit-sm">${pkg.title}</h3>
+                            <p class="text-on-surface-variant font-body-md mb-unit-lg leading-relaxed">${pkg.description}</p>
+                            <div class="text-display-lg text-headline-md mb-unit-xl text-primary font-bold">${pkg.price}</div>
+                            <ul class="space-y-unit-md flex-grow">
+                                ${(pkg.features || []).map(f => `
+                                    <li class="flex items-center gap-unit-sm text-on-surface font-label-md">
+                                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                        ${f}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }).join('');
+            } catch(e) {
+                console.error("Could not parse pricing packages:", e);
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

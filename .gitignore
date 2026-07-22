@@ -1,0 +1,16 @@
+# OS metadata files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs & cache
+*.log
+npm-debug.log*
+.cache/
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
