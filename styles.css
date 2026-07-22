@@ -839,3 +839,54 @@ html, body {
     width: 80px;
   }
 }
+
+/* Responsive Mobile Enhancements */
+@media (max-width: 768px) {
+  header.fixed {
+    width: 95% !important;
+    top: 0.5rem !important;
+  }
+
+  .hero-logo-img {
+    max-width: 220px !important;
+    margin-bottom: -3rem !important;
+  }
+
+  .hero-brand-card {
+    padding: 1rem 1.25rem !important;
+    width: 92vw !important;
+  }
+
+  .hero-brand-card.glass-docked {
+    padding: 0.85rem 1.5rem !important;
+  }
+
+  .hero-subheadline {
+    font-size: 1.2rem !important;
+  }
+
+  .hero-story-card {
+    padding: 1rem 1.25rem !important;
+    width: 92vw !important;
+  }
+
+  .hero-story-text {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-img {
+    max-width: 180px !important;
+    margin-bottom: -2.5rem !important;
+  }
+
+  .hero-brand-card.glass-docked .hero-logo-img {
+    max-width: 140px !important;
+    margin-bottom: -1.5rem !important;
+  }
+
+  .loader-brand {
+    font-size: 1.5rem !important;
+  }
+}
