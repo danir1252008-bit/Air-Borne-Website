@@ -18,12 +18,3 @@ Write-Host "Configuring Remote Origin..."
 
 Write-Host "Setting Branch to main..."
 & $gitExe branch -M main
-
-Write-Host "Staging Files..."
-& $gitExe add .
-
-Write-Host "Creating Commit..."
-& $gitExe commit -m "Airborne website codebase prepared for Vercel & Hostinger deployment"
-
-Write-Host "Pushing to GitHub..."
-& $gitExe push -u origin main
